@@ -2,7 +2,7 @@
 const buttonToBeClicked = document.querySelector('button');
 buttonToBeClicked.addEventListener("click", darkMode);
 
-function darkMode() { 
+function darkMode() {
   if (document.body.style.background) {
   document.body.style.background = "";
   document.body.style.color = "#111";
@@ -14,19 +14,7 @@ function darkMode() {
 //implmenting quiz
 
 var totalQuestions = [
-  {
-  question: "2 + 2 is equal to ?",
-  choices: ["1", "2", "4"],
-  correctAnswer: "4"
-}, {
-  question: "2 x 2 is equal to?",
-  choices: ["4", "8", "12"],
-  correctAnswer: "4"
-}, {
-  question: "6 / 2 is equal to ?",
-  choices: ["1", "3", "6"],
-  correctAnswer: "3"
-}, 
+
 {
   question: " Do camels have three sets of eyelids?",
   choices: ["False", "True"],
@@ -42,6 +30,19 @@ var totalQuestions = [
   choices: ["False", "True"],
   correctAnswer: "False"
 },
+{
+question: "2 + 2 is equal to ?",
+choices: ["1", "2", "4"],
+correctAnswer: "4"
+}, {
+question: "2 x 2 is equal to?",
+choices: ["4", "8", "12"],
+correctAnswer: "4"
+}, {
+question: "6 / 2 is equal to ?",
+choices: ["1", "3", "6"],
+correctAnswer: "3"
+}, 
 {
   question: "2 + 2 and 2 x 6 is equal to ?",
   choices: ["4", "12","14","20"],
@@ -62,7 +63,7 @@ function Quiz(options) {
   var currentQuestion;
 
   generateQuestions(totalQuestions);
-  
+
   initQuiz();
 
   function generateQuestions(q) {
@@ -89,12 +90,12 @@ function Quiz(options) {
           var choicetext = document.createElement('label');
           choicetext.setAttribute('for', check.name);
           choicetext.textContent = q[i].choices[j];
-  
+
           choice.appendChild(check);
           choice.appendChild(choicetext);
-  
+
           list.appendChild(choice);
-         
+
         }
         else{
         var check = document.createElement('input');
@@ -155,7 +156,7 @@ if(i==6)
   const abc = answers.slice(6,)
   if(abc.sort().join(',')=== totalQuestions[i].correctAnswer.sort().join(','))
   {
-    correctAnswers++    
+    correctAnswers++
   }
 
 }
@@ -171,7 +172,7 @@ else if( i !=6 && totalQuestions[i].correctAnswer === answers[i] )
     var answered = false;
     var checkAns = [];
     for (var i = 0, len = listItems.length; i < len; i++) {
- 
+
       if (listItems[i].checked) {
 
 answers.push(listItems[i].value);
